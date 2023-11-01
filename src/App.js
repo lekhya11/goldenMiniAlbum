@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import MusicList from './Component/MusicList'
 
 import './App.css'
@@ -87,18 +89,71 @@ const initialTracksList = [
 
 // Replace your code here
 
-const App = () => (
-  <>
-    <div className="bg-container">
-      <h1>Ed Sheeran</h1>
-      <p>Singer</p>
-    </div>
-    <ul>
-      {initialTracksList.map(each => (
-        <MusicList song={each} key={each.id} />
-      ))}
-    </ul>
-  </>
-)
+class App extends Component {
+  state = {
+    searchInput: '',
+    initialList: initialTracksList,
+  }
+
+  deleteFunction = id => {
+    const {initialList} = this.state
+
+    const deleteFilter = initialList.filter(each => each.id !== id)
+
+    this.setState({initialList: deleteFilter})
+  }
+
+  onSearch = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  render() {
+    const {initialList, searchInput} = this.state
+    console.log(searchInput)
+    const searchResult = initialList.filter(each =>
+      each.name.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+    return (
+      <div>
+        <div className="bg-container">
+          <h1>Ed Sheeran</h1>
+          <p>Singer</p>
+        </div>
+        <div className="bg-color">
+          <div className="search-container">
+            <h2>Songs Playlist</h2>
+            <div className="input-search">
+              <input
+                type="search"
+                className="input-search-value"
+                placeholder="Search"
+                onChange={this.onSearch}
+                value={searchInput}
+              />
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/search-img.png"
+                alt="search"
+                className="search-icon"
+              />
+            </div>
+          </div>
+          {searchResult.length === 0 ? (
+            <p>No Songs Found View </p>
+          ) : (
+            <ul>
+              {searchResult.map(each => (
+                <MusicList
+                  song={each}
+                  key={each.id}
+                  onDelete={this.deleteFunction}
+                />
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    )
+  }
+}
 
 export default App
