@@ -1,27 +1,33 @@
 import './index.css'
 
+import {Container} from 'react-bootstrap'
+
 const MusicList = props => {
   const {song, onDelete} = props
   const {id, imageUrl, name, genre, duration} = song
 
   const onClickedDelete = () => {
     onDelete(id)
-    console.log('clicked')
+    // console.log('clicked')
   }
 
   return (
     <li>
-      <div className="bottom-container">
-        <div className="left-container">
-          <img src={imageUrl} alt="track" className="image" />
-          <div className="heading-container">
-            <p>{name}</p>
-            <p>{genre}</p>
+      <Container>
+        <button
+          className="bottom-container"
+          type="button"
+          onClick={onClickedDelete}
+        >
+          <div className="left-container">
+            <img src={imageUrl} alt="track" className="image" />
+            <div className="heading-container">
+              <p>{name}</p>
+              <p>{genre}</p>
+              <p>{duration}</p>
+            </div>
           </div>
-        </div>
-        <div className="left-container">
-          <p>{duration}</p>
-
+          {/* <div className="left-container">
           <button
             type="button"
             data-testid="delete"
@@ -34,8 +40,9 @@ const MusicList = props => {
               className="delete-logo"
             />
           </button>
-        </div>
-      </div>
+        </div> */}
+        </button>
+      </Container>
     </li>
   )
 }

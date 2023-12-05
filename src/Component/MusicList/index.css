@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,14 +9,19 @@
 .heading-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+  font-family: 'Dhurjati';
+  margin: 3px;
+  padding: 0px;
+  font-size: x-large;
+  font-weight: 500;
 }
 
 .bg-color {
   background-color: #152850;
   list-style-type: none;
-
   padding: 10px;
 }
 
@@ -26,6 +33,11 @@
 .bottom-container {
   display: flex;
   justify-content: space-between;
+  background-color: #ffffff33;
+  margin: 25px;
+  width: 350px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .left-container {
@@ -46,8 +58,8 @@
 }
 
 .image {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   border-radius: 8px;
   margin-right: 10px;
 }

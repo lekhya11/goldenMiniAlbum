@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -13,17 +15,31 @@ body {
 }
 
 .bg-container {
-  background-image: url('https://assets.ccbp.in/frontend/react-js/music-playlist/music-playlist-Edsheeran-bg.png');
+  background-image: url('https://img.freepik.com/free-vector/black-background-with-focus-spot-light_1017-27230.jpg?w=996&t=st=1701776352~exp=1701776952~hmac=da151dda3b856c7eb6f210c3b7895485c3fc19912509b75b50a51c550b75c6fe');
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   height: 40vh;
   padding: 10px;
-  color: white;
+  color: gold;
 }
 
+.main-head {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Rubik Bubbles';
+  text-shadow: 10 10 10 10 red;
+}
+
+.main-para {
+  font-size: 20px;
+  margin-top: 0px;
+  font-weight: bold;
+  font-family: 'Dhurjati';
+  text-shadow: 10 10 10 10 red;
+}
 .search-container {
   display: flex;
   justify-content: space-between;
@@ -35,23 +51,33 @@ body {
   background-color: #152850;
   list-style-type: none;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.input-search {
+.input-search-value {
   height: 30px;
-  width: 150px;
+  width: 80px;
   background-color: #152850;
   border: 2px solid white;
   border-radius: 5px;
   width: 200px;
   padding: 6px;
+  margin-right: 20px;
 }
 
-.input-search-value {
+.songs-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* .input-search-value {
   border: none;
   outline: none;
   background-color: #152850;
-}
+} */
 
 @media screen and (max-width: 799px) {
   .bg-container {
