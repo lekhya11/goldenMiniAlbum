@@ -131,7 +131,9 @@ class App extends Component {
     return (
       <div>
         {videoClicked ? (
-          <MyPlayer videoData={videoData} />
+          <div className="bg-container1">
+            <MyPlayer videoData={videoData} />
+          </div>
         ) : (
           <div className="bg-container">
             <h1 className="main-head">Golden97</h1>
